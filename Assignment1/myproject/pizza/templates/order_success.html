@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Order Success{% endblock %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <h2>Order Confirmed!</h2>
+    <p>Your pizza is on the way! Here are the details:</p>
+
+    <div class="card p-4">
+        <h3>Your Pizza:</h3>
+        <p><strong>Size:</strong> {{ pizza.size }}</p>
+        <p><strong>Crust:</strong> {{ pizza.crust }}</p>
+        <p><strong>Sauce:</strong> {{ pizza.sauce }}</p>
+        <p><strong>Cheese:</strong> {{ pizza.cheese }}</p>
+        <p><strong>Toppings:</strong> {{ pizza.toppings }}</p>
+        
+    </div>
+
+    <div class="card p-4 mt-3">
+        <h3>Delivery Details:</h3>
+        <p><strong>Name:</strong> {{ customer.name }}</p>
+        <p><strong>Address:</strong> {{ customer.address }}</p>
+    </div>
+
+    <a href="{% url 'home' %}" class="btn btn-primary mt-4">Return Home</a>
+</div>
+{% endblock %}

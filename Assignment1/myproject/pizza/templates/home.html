@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Not Pizza Hut{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        {% if user.is_authenticated %}
+            <div class="text-center mb-5">
+                <h1>Welcome, {{ user.username }}!</h1>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    <h3 class="card-title">What would you like to do today?</h3>
+                    <p>
+                    <a href="{% url 'order' %}" class="btn btn-primary mb-3">Make an Order</a>
+                    </p>
+                    <h1><strong>Previous Orders</strong></h1>
+
+                    {% if previous_orders %}
+                        {% for order in previous_orders %}
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <hr>
+                                    <h3 class="card-title">Order from {{ order.order_date|date:"F j, Y, g:i a" }}</h3>
+                                    <p><strong>Size:</strong> {{ order.pizza.size }}</p>
+                                    <p><strong>Crust:</strong> {{ order.pizza.crust }}</p>
+                                    <p><strong>Sauce:</strong> {{ order.pizza.sauce }}</p>
+                                    <p><strong>Cheese:</strong> {{ order.pizza.cheese }}</p>
+                                    <p><strong>Toppings:</strong> {{ order.pizza.toppings }}</p>
+                                    
+                                    <p><strong>Delivery Address:</strong> {{ order.address }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-muted">No previous orders found.</p>
+                    {% endif %}
+
+                    <br>
+                    <a href="{% url 'logout' %}" class="btn btn-danger mb-3">Log Out</a>
+                </div>
+            </div>
+
+        {% else %}
+            <div class="text-center mb-5">
+                <h2>Welcome to Not Pizza Hut!</h2>
+                <p>Join us to start ordering.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-body text-center">
+                    <h3 class="card-title">Get Started</h3>
+                    <a href="{% url 'signup' %}" class="btn btn-primary">Sign Up</a>
+                    <br>
+                    <p class="mt-3">Already have an account? <a href="{% url 'login' %}">Log In</a></p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

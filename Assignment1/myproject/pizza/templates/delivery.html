@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Delivery - Not Pizza Hut{% endblock %}
+
+{% block content %}
+    <h1 class="my-4">Delivery Information</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-4 shadow-lg rounded-3">
+                <form method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label class="form-label">{{ field.label }}</label>
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="text-danger">
+                                    {{ field.errors.0 }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary w-100 mt-3">Submit Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,172 @@
+/* static/css/styles.css */
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(to bottom, #f7f1e1, #e0cfc1); /* gradient */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    color: #333;
+}
+/* Navbar Styles */
+.custom-navbar {
+    background-color: #d93f00;
+    padding: 15px 20px;
+    border-bottom: 2px solid #b72c00;
+    text-align: center;
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-logo {
+    height: 250px;
+    margin-bottom: 10px;
+}
+
+.brand-name {
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    margin-right: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 12px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff !important;
+    background-color: #b72c00;
+    border-radius: 5px;
+}
+
+/* Active Link Style */
+.navbar-nav .active {
+    font-weight: bold;
+    background-color: #a11f00;
+    border-radius: 5px;
+}
+
+/* Container Styles for Page Content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Main Page Title */
+h1 {
+    text-align: center;
+    color: #d93f00; /* Matching the navbar color */
+    font-size: 36px;
+    font-family: 'Quicksand', sans-serif; /* Consistent font for the page */
+    margin-top: 50px;
+}
+
+/* Button Styles */
+button {
+    background-color: #f9c743; /* Muted yellow-orange */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e6a11f; /* Darker yellow-orange */
+}
+
+ul.centered-list {
+    display: inline-block;
+    text-align: left;
+  }
+
+/* Center the form on the page */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin: 50px auto;
+    width: 500px; /* Adjust as needed */
+    background-color: #f8f5e4; /* Light food-themed background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Align labels and inputs neatly */
+.form-group {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-label {
+    display:flex;
+    flex-direction:column;
+}
+
+form select, form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Toppings stacked neatly */
+.toppings-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.toppings-container label {
+    display: block;
+    margin-right: 10px;
+}
+
+.toppings-container input[type="checkbox"] {
+    transform: scale(1.3);
+    vertical-align: middle;
+    position: relative;
+    bottom: 2px;
+    margin-right: 10px;
+}
+
+a {
+    font-size: x-large;
+}
+
+p {
+    font-size: large;
+}

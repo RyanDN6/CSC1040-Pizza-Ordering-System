@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Make an Order - Not Pizza Hut{% endblock %}
+
+{% block content %}
+<h1 class="my-4">Create Your Pizza</h1>
+<form method="post">
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label for="size">{{ form.size.label }}</label>
+        {{ form.size }}
+    </div>
+
+    <div class="form-group">
+        <label for="crust">{{ form.crust.label }}</label>
+        {{ form.crust }}
+    </div>
+
+    <div class="form-group">
+        <label for="sauce">{{ form.sauce.label }}</label>
+        {{ form.sauce }}
+    </div>
+
+    <div class="form-group">
+        <label for="cheese">{{ form.cheese.label }}</label>
+        {{ form.cheese }}
+    </div>
+
+    <div class="form-group toppings-container">
+        <label for="pepperoni">{{ form.pepperoni.label }}</label>
+        {{ form.pepperoni }}
+    </div>
+
+    <div class="form-group toppings-container">
+        <label for="chicken">{{ form.chicken.label }}</label>
+        {{ form.chicken }}
+    </div>
+
+    <div class="form-group toppings-container">
+        <label for="ham">{{ form.ham.label }}</label>
+        {{ form.ham }}
+    </div>
+
+    <div class="form-group toppings-container">
+        <label for="pineapple">{{ form.pineapple.label }}</label>
+        {{ form.pineapple }}
+    </div>
+
+    <div class="form-group toppings-container">
+        <label for="peppers">{{ form.peppers.label }}</label>
+        {{ form.peppers }}
+    </div>
+
+    <div class="form-group toppings-container">
+        <label for="mushrooms">{{ form.mushrooms.label }}</label>
+        {{ form.mushrooms }}
+    </div>
+
+    <div class="form-group toppings-container">
+        <label for="onions">{{ form.onions.label }}</label>
+        {{ form.onions }}
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Order</button>
+</form>
+{% endblock %}
